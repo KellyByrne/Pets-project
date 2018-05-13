@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="columns large-6 medium-6 small-12">
+    <img src="https://s3.amazonaws.com/kbpet-images/{{animal[0].filename}}" alt="">
+  </div>
+  <div class="columns large-6 medium-6 small-12">
+      <h3>{{animal[0].name}}</h3>
+      <p class="intro">About Me</p>
+      <p>{{animal[0].bio}}</p>
+      <p class="intro">Likes</p>
+      <p>{{animal[0].likes}}</p>
+      <p class="intro">Dislikes</p>
+      <p>{{animal[0].dislikes}}</p>
+      <button routerLink="/{{animal[0]._id}}/edit">Edit Pet</button>
+      <button (click)="deleteAnimal()">Delete Pet</button>
+      <a class="home-link" routerLink="/">Return Home</a>
+    </div>
+</div>

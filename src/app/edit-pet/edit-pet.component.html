@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="columns large-12">
+      <h2>Edit Pet</h2>
+        <label for="Pet Name">Pet Name</label>
+        <input type="text" [(ngModel)]="animal.name">
+        <label for="Pet Image">Pet Image</label>
+        <input type="file" name="image" (change)="onFileSelected($event)"> 
+        <label for="Pet Bio">Pet Bio</label>
+        <textarea name="" id="" cols="30" rows="10" [(ngModel)]="animal.bio"></textarea>
+        <label for="Pet Likes">Pet Likes</label>
+        <input type="text" [(ngModel)]="animal.likes">
+        <label for="Pet Dislikes">Pet Dislikes</label>
+        <input type="text" [(ngModel)]="animal.dislikes">
+        <button (click)="editAnimal()">Edit Animal</button> 
+    </div>
+  </div>
+  
+  
+  
