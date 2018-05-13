@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { PetsService } from './../pets.service';
 import { Animal } from './../animal';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class AddPetComponent implements OnInit {
   animal = new Animal();
   image;
-  constructor(private petsService: PetsService ) {}
+  constructor(private petsService: PetsService,
+              private route: ActivatedRoute,
+              private router: Router) {}
 
   ngOnInit() {
   }
@@ -27,6 +30,7 @@ export class AddPetComponent implements OnInit {
     this.petsService.addPet('https://hidden-shore-65808.herokuapp.com/api/pets', formData).subscribe(results => {
       // this.petsService.addPet('http://localhost:3000/api/pets', formData).subscribe(results => {
       console.log(results);
+      this.router.navigate(['/']);
       },
       (error) => console.log(error)
     );
